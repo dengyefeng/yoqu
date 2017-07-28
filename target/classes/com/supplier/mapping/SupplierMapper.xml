@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.supplier.dao.SupplierMapper">
+
+	<insert id="insertSupplierInfo" parameterType="com.supplier.model.SupplierInfo">
+		insert into supplier_info
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+		    id,
+			<if test="userName != null">
+				user_name,
+			</if>
+			<if test="userSite != null">
+				user_site,
+			</if>
+			<if test="userPostion != null">
+				user_postion,
+			</if>
+			<if test="userPhone != null">
+				user_phone,
+			</if>
+			<if test="userEmail != null">
+				user_email,
+			</if>
+			<if test="clientProvince != null">
+				client_province,
+			</if>
+			<if test="clientCity != null">
+				client_city,
+			</if>
+			<if test="clientOperator != null">
+				client_operator,
+			</if>
+			<if test="projectLeader != null">
+				project_leader,
+			</if>
+			<if test="clientDepartment != null">
+				client_department,
+			</if>
+			<if test="clientPhone != null">
+				client_phone,
+			</if>
+			<if test="businessType != null">
+				business_type,
+			</if>
+			<if test="stage != null">
+				stage,
+			</if>
+			<if test="itemAmount != null">
+				item_amount,
+			</if>
+			<if test="accessToInfo != null">
+				access_to_info,
+			</if>
+			<if test="projectDesc != null">
+				project_desc,
+			</if>
+			<if test="userName != null">
+				created_user ,
+			</if>
+			<if test="userName != null">
+				updated_user ,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+		    #{id,jdbcType=VARCHAR},
+			<if test="userName != null">
+				#{userName,jdbcType=VARCHAR},
+			</if>
+			<if test="userSite != null">
+				#{userSite,jdbcType=VARCHAR},
+			</if>
+			<if test="userPostion != null">
+				#{userPostion,jdbcType=VARCHAR},
+			</if>
+			<if test="userPhone != null">
+				#{userPhone,jdbcType=VARCHAR},
+			</if>
+			<if test="userEmail != null">
+				#{userEmail,jdbcType=VARCHAR},
+			</if>
+			<if test="clientProvince != null">
+				#{clientProvince,jdbcType=VARCHAR},
+			</if>
+			<if test="clientCity != null">
+				#{clientCity,jdbcType=VARCHAR},
+			</if>
+			<if test="clientOperator != null">
+				#{clientOperator,jdbcType=VARCHAR},
+			</if>
+			<if test="projectLeader != null">
+				#{projectLeader,jdbcType=VARCHAR},
+			</if>
+			<if test="clientDepartment != null">
+				#{clientDepartment,jdbcType=VARCHAR},
+			</if>
+			<if test="clientPhone != null">
+				#{clientPhone,jdbcType=VARCHAR},
+			</if>
+			<if test="businessType != null">
+				#{businessType,jdbcType=VARCHAR},
+			</if>
+			<if test="stage != null">
+				#{stage,jdbcType=VARCHAR},
+			</if>
+			<if test="itemAmount != null">
+				#{itemAmount,jdbcType=DECIMAL},
+			</if>
+			<if test="accessToInfo != null">
+				#{accessToInfo,jdbcType=VARCHAR},
+			</if>
+			<if test="projectDesc != null">
+				#{projectDesc,jdbcType=VARCHAR},
+			</if>
+			<if test="userName != null">
+				#{userName,jdbcType=VARCHAR},
+			</if>
+			<if test="userName != null">
+				#{userName,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+</mapper>

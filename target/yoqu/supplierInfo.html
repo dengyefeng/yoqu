@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="css/jquery-ui.css" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/toastr.css" />
+<link rel="stylesheet" href="css/bootstrapValidator.css" />
+</head>
+<body>
+	<div class="container">
+		<div class="panel panel-primary">
+			<div class="panel-heading">技服项目立项审评记录表</div>
+			<div class="panel-body">
+				<form class="form-horizontal" id = "myform"  >
+				    <input name ="userId" id="userId" type="hidden">
+					<input name ="userName" id="userName" type="hidden">
+					<input name =userSite id="userSite" type="hidden">
+					<input name ="userPostion" id="userPostion" type="hidden">
+					<input name ="userPhone" id="userPhone" type="hidden">
+					<input name ="userEmail" id="userEmail" type="hidden">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">省</label>
+						<div class="col-sm-10">
+							<input required type="text" maxlength="20"  name="clientProvince" class="form-control " id="clientProvince" placeholder="省">
+						</div>
+					</div>
+					<div class="form-group">
+						<label  class="col-sm-2 control-label">市</label>
+						<div class="col-sm-10">
+							<input  required type="text"  maxlength="20" name="clientCity" class="form-control" id="clientCity" placeholder="市">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">运营商</label>
+						<div class="col-sm-10">
+							<select class="form-control" name="clientOperator" id="clientOperator">
+							  <option value="移动">移动</option>
+							  <option value="联通">联通</option>
+							  <option value="电信">电信</option>
+							  <option value="其他">其他</option>
+							</select>
+							<!-- <input required maxlength="20" name="clientOperator" class="form-control" id="clientOperator" placeholder="移动/联通/电信/其他"> -->
+						</div>
+					</div>
+					<div class="form-group">
+						<label  class="col-sm-2 control-label">项目负责人</label>
+						<div class="col-sm-10">
+							<input required maxlength="20"  name="projectLeader" class="form-control" id="projectLeader" placeholder="运营商项目负责人">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">部门</label>
+						<div class="col-sm-10">
+							<input required maxlength="50" name="clientDepartment" class="form-control" id="clientDepartment" placeholder="部门">
+						</div>
+					</div>
+					<div class="form-group">
+						<label  class="col-sm-2 control-label">联系方式</label>
+						<div class="col-sm-10">
+							<input required maxlength="20" name="clientPhone" class="form-control" id="clientPhone" placeholder="联系方式">
+						</div>
+					</div>
+					<div class="form-group">
+						<label  class="col-sm-2 control-label">业务类型</label>
+						<div class="col-sm-10">
+							<select class="form-control" name="businessType" id="businessType">
+							  <option value="新业务">新业务</option>
+							  <option value="传统业务">传统业务</option>
+							</select>
+                           <!-- <input required maxlength="10" name="businessType" class="form-control" id="businessType" placeholder="新业务/传统业务"> -->
+						</div>
+					</div>
+					<div class="form-group">
+						<label  class="col-sm-2 control-label">所属阶段</label>
+						<div class="col-sm-10">
+							<select class="form-control"  id="stage" name="stage" >
+							  <option value="招标准备">招标准备</option>
+							  <option value="招标中">招标中</option>
+							  <option value="已定标">已定标</option>
+							</select>
+							<!-- <input required maxlength="10" name="stage" class="form-control" id="stage" placeholder="招标准备/招标/已定标"> -->
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">项目金额 预估(万)</label>
+						<div class="col-sm-10">
+							<input required name="itemAmount" class="form-control" pattern="^(0|[1-9]\d{0,6})(\.\d{1,2})?$"  id="itemAmount"
+								placeholder="项目金额">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">信息获取途径</label>
+						<div class="col-sm-10">
+							<select class="form-control" name="accessToInfo" id="accessToInfo">
+							  <option value="媒体新闻">媒体新闻</option>
+							  <option value="参加展会">参加展会</option>
+							  <option value="客户拜访">客户拜访</option>
+							  <option value="友商交流">友商交流</option>
+							  <option value="其他">其他</option>
+							</select>
+							<!-- <input required  maxlength="100" name="accessToInfo" class="form-control" id="accessToInfo"
+								placeholder="媒体新闻/参加展会/客户拜访/友商交流/其他"> -->
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">项目描述</label>
+						<div class="col-sm-10">
+							<textarea required maxlength="200" name="projectDesc" class="form-control" id="projectDesc" rows="3" placeholder="例如：项目规模、竞争对手、风险点等其他信息"></textarea>
+						</div>
+					</div>
+					
+					<div class="box-footer">
+						<button type="submit" id="sub" class="btn btn-info btn-lg btn-block" >提交</button>
+						
+					</div>
+					
+					
+				</form>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="javascript/jquery.js"></script>
+	<script type="text/javascript" src="javascript/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="javascript/jquery-ui.js"></script>
+	<script type="text/javascript" src="javascript/bootstrap.min.js"></script>
+	<script type="text/javascript" src="javascript/bootstrapValidator.js"></script>
+	<script type="text/javascript" src="javascript/toastr.min.js"></script>
+	<script type="text/javascript" src="javascript/supplierInfo.js"></script>
+</body>
+</html>
